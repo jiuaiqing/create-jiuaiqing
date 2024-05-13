@@ -7,8 +7,8 @@ import chalk from "chalk";
 const bootstrap = async () => {
     console.log(chalk.cyan("欢迎使用久爱卿开发脚手架"));
     console.log(`
-    /\_____/\
-    /  o   o  \
+     /\\_____/\\
+    /  o   o  \\
    ( ==  ^  == )
     )         (
    (           )
