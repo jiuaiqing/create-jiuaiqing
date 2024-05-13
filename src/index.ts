@@ -6,11 +6,20 @@ import fs from "node:fs";
 import chalk from "chalk";
 const bootstrap = async () => {
     console.log(chalk.cyan("欢迎使用久爱卿开发脚手架"));
+    console.log(`
+    /\_____/\
+    /  o   o  \
+   ( ==  ^  == )
+    )         (
+   (           )
+  ( (  )   (  ) )
+ (__(__)___(__)__)    
+    `);
     const result =  await prompts([
         {
             type: "text",
             name: "projectName",
-            message: "请输入项目名称:"
+            message: "请输入您要新建的项目名称:"
         },
     ]);
     //管理控制台输入
@@ -33,6 +42,7 @@ const bootstrap = async () => {
     //————————————————————————————————————————————————————————————————————————————————————————————————
     //最后输出
     console.log(`
+    今天也要努力呀!
     项目创建成功，请执行以下命令：
     cd ${result.projectName}
     pnpm i
