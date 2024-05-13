@@ -1,6 +1,6 @@
 {
   "name": "create-jiuaiqing",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "bin": {
     "create-jiuaiqing": "dist/index.js"
