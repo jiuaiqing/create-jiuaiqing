@@ -21,11 +21,25 @@ const bootstrap = async () => {
             name: "projectName",
             message: "请输入您要新建的项目名称:"
         },
+        {
+            type: "select",
+            name: "projectType",
+            message: "请选择项目类型:",
+            choices: [
+                { title: chalk.green("fe"), value: "fe"},
+                { title: chalk.blue("be"), value: "be"}
+            ],
+            initial:0
+        }
     ]);
     //管理控制台输入
     //————————————————————————————————————————————————————————————————————————————————————————————————
     const targetPath = path.resolve(process.cwd(), result.projectName);
-    const sourcePath = path.resolve(__dirname, "../template");
+    let sourcePath:string = "";
+    function projectType(projectName:string){
+        sourcePath = path.resolve(__dirname, `../template/${projectName}` );
+    }
+    projectType(result.projectType);
     // Copy files from sourcePath to targetPath
     fs.cpSync(sourcePath, targetPath, { recursive: true });
     // Update package.json
